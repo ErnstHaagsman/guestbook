@@ -1,14 +1,14 @@
 package guestbook;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 public class GuestBookEntry {
     private final String author;
     private final String message;
     private final String imageUrl;
-    private final LocalDateTime createdAt;
+    private final OffsetDateTime createdAt;
 
-    public GuestBookEntry(String author, String message, String imageUrl, LocalDateTime createdAt){
+    public GuestBookEntry(String author, String message, String imageUrl, OffsetDateTime createdAt){
         this.author = author;
         this.message = message;
         this.imageUrl = imageUrl;
@@ -27,7 +27,7 @@ public class GuestBookEntry {
         return imageUrl;
     }
 
-    public LocalDateTime getCreatedAt() {
+    public OffsetDateTime getCreatedAt() {
         return createdAt;
     }
 

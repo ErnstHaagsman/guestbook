@@ -26,6 +26,6 @@ public class EntryResponseModel {
     }
 
     public ZonedDateTime getDatetime(){
-        return entry.getCreatedAt().atZone(ZoneId.of("UTC"));
+        return entry.getCreatedAt().atZoneSameInstant(ZoneId.of("UTC"));
     }
 }

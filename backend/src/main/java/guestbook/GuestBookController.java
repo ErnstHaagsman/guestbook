@@ -18,7 +18,8 @@ public class GuestBookController {
 
     @PostMapping(consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
-    public GuestBookEntry postEntry(@RequestBody EntryRequestModel request){
-        return repository.create(request.getAuthor(), request.getMessage(), request.getImageUrl());
+    public EntryResponseModel postEntry(@RequestBody EntryRequestModel request){
+        GuestBookEntry entry = repository.create(request.getAuthor(), request.getMessage(), request.getImageUrl());
+        return new EntryResponseModel(entry);
     }
 }

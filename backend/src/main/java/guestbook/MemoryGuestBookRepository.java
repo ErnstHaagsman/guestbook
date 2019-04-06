@@ -1,13 +1,15 @@
 package guestbook;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedList;
 
+@Primary
 @Component
 @Scope("singleton")
 public class MemoryGuestBookRepository implements GuestBookRepository {
@@ -20,7 +22,7 @@ public class MemoryGuestBookRepository implements GuestBookRepository {
 
     @Override
     public GuestBookEntry create(String author, String message, String imageUrl) {
-        GuestBookEntry newEntry = new GuestBookEntry(author, message, imageUrl, LocalDateTime.now());
+        GuestBookEntry newEntry = new GuestBookEntry(author, message, imageUrl, OffsetDateTime.now());
         if (entries.size() == CAPACITY)
             entries.removeLast();
 
