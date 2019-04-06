@@ -1,6 +1,7 @@
 package guestbook;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -10,6 +11,7 @@ import java.time.OffsetDateTime;
 import java.time.ZoneId;
 
 @Repository
+@Profile("postgres")
 public class PostgresGuestBookRepository implements GuestBookRepository {
     private final JdbcTemplate jdbc;
 
