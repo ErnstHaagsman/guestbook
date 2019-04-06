@@ -1,6 +1,6 @@
 package guestbook;
 
-import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -9,8 +9,8 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedList;
 
-@Primary
 @Component
+@Profile("memory")
 @Scope("singleton")
 public class MemoryGuestBookRepository implements GuestBookRepository {
     private final Deque<GuestBookEntry> entries;

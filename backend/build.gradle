@@ -24,8 +24,12 @@ repositories {
     mavenCentral()
 }
 
+sourceCompatibility = 1.8
+
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-jdbc")
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.2.5'
     testCompile('org.springframework.boot:spring-boot-starter-test')
     annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 }
