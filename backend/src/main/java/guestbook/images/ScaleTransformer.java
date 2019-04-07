@@ -1,4 +1,4 @@
-package guestbook;
+package guestbook.images;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Primary;

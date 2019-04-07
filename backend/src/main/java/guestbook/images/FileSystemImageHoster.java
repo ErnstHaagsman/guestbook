@@ -1,4 +1,4 @@
-package guestbook;
+package guestbook.images;
 
 import org.springframework.stereotype.Component;
 

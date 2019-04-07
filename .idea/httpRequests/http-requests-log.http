@@ -1,0 +1,317 @@
+GET http://localhost:8080/entries
+
+<> 2019-04-07T110806.200.json
+
+###
+
+POST http://localhost:8080/entries
+Content-Type: application/json
+
+{
+  "name": "Stan S.",
+  "msg":"USA! USA! USA!",
+  "img_url": "https://i.imgur.com/AD3MbBi.jpg"
+}
+
+<> 2019-04-07T110755.201.json
+
+###
+
+GET http://192.168.99.101:8080/entries
+
+<> 2019-04-07T102505.200.json
+
+###
+
+GET http://localhost:8080/entries
+
+###
+
+POST http://192.168.99.101:8080/entries
+Content-Type: application/json
+
+{
+  "name": "Stan S.",
+  "msg":"USA! USA! USA!",
+  "img_url": "https://i.imgur.com/AD3MbBi.jpg"
+}
+
+<> 2019-04-07T102443.201.json
+
+###
+
+POST http://localhost:8080/entries
+Content-Type: application/json
+
+{
+  "name": "Stan S.",
+  "msg":"USA! USA! USA!",
+  "img_url": "https://i.imgur.com/AD3MbBi.jpg"
+}
+
+###
+
+POST http://localhost:8080/entries
+Content-Type: application/json
+
+{
+  "name": "Stan S.",
+  "msg":"USA! USA! USA!",
+  "img_url": "https://i.imgur.com/AD3MbBi.jpg"
+}
+
+<> 2019-04-07T012251.201.json
+
+###
+
+POST http://localhost:8080/entries
+Content-Type: application/json
+
+{
+  "name": "Stan S.",
+  "msg":"USA! USA! USA!",
+  "img_url": "https://i.imgur.com/AD3MbBi.jpg"
+}
+
+<> 2019-04-07T011349.201.json
+
+###
+
+POST http://localhost:8080/entries
+Content-Type: application/json
+
+{
+  "name": "Peter G.",
+  "msg":"The bird is the word",
+  "img_url": "https://i.imgur.com/AD3MbBi.jpg"
+}
+
+<> 2019-04-07T010143.201.json
+
+###
+
+GET http://localhost:8080/entries
+
+<> 2019-04-07T010107.200.json
+
+###
+
+POST http://localhost:8080/entries
+Content-Type: application/json
+
+{
+  "name": "Peter G.",
+  "msg":"The bird is the word",
+  "img_url": "https://i.imgur.com/AD3MbBi.jpg"
+}
+
+<> 2019-04-07T010105.201.json
+
+###
+
+POST http://localhost:8080/entries
+Content-Type: application/json
+
+{
+  "name": "Peter G.",
+  "msg":"The bird is the word",
+  "img_url": "https://i.imgur.com/AD3MbBi.jpg"
+}
+
+<> 2019-04-07T010104.201.json
+
+###
+
+GET http://localhost:8080/entries
+
+<> 2019-04-07T125417.200.json
+
+###
+
+POST http://localhost:8080/entries
+Content-Type: application/json
+
+{
+  "name": "Peter G.",
+  "msg":"The bird is the word",
+  "img_url": "https://i.imgur.com/AD3MbBi.jpg"
+}
+
+<> 2019-04-07T125413.201.json
+
+###
+
+POST http://localhost:8080/entries
+Content-Type: application/json
+
+{
+  "name": "Homer S.",
+  "msg":"Beer: the cause of, and solution to all problems",
+  "img_url": "https://i.imgur.com/AD3MbBi.jpg"
+}
+
+<> 2019-04-07T125313.201.json
+
+###
+
+POST http://localhost:8080/entries
+Content-Type: application/json
+
+{
+  "name": "Homer S.",
+  "msg":"Beer: the cause of, and solution to all problems",
+  "img_url": "https://i.imgur.com/AD3MbBi.jpg"
+}
+
+<> 2019-04-07T124933.500.json
+
+###
+
+POST http://localhost:8080/entries
+Content-Type: application/json
+
+{
+  "name": "Homer S.",
+  "msg":"Beer: the cause of, and solution to all problems",
+  "img_url": "https://i.imgur.com/AD3MbBi.jpg"
+}
+
+<> 2019-04-07T122811.201.json
+
+###
+
+POST http://localhost:8080/entries
+Content-Type: application/json
+
+{
+  "name": "Homer S.",
+  "msg":"Beer: the cause of, and solution to all problems",
+  "img_url": "URL to an image to attach to the post"
+}
+
+<> 2019-04-07T122754.400.json
+
+###
+
+GET http://localhost:8080/entries
+
+<> 2019-04-06T105100.200.json
+
+###
+
+POST http://localhost:8080/entries
+Content-Type: application/json
+
+{
+  "name": "Homer S.",
+  "msg":"Beer: the cause of, and solution to all problems",
+  "img_url": "URL to an image to attach to the post"
+}
+
+<> 2019-04-06T105058.201.json
+
+###
+
+POST http://localhost:8080/entries
+Content-Type: application/json
+
+{
+  "name": "Mickey M.",
+  "msg":"You have to wear the ring!",
+  "img_url": "URL to an image to attach to the post"
+}
+
+<> 2019-04-06T105014.201.json
+
+###
+
+POST http://localhost:8080/entries
+Content-Type: application/json
+
+{
+  "name": "Bugs B.",
+  "msg":"Ey, what's up doc?",
+  "img_url": "URL to an image to attach to the post"
+}
+
+<> 2019-04-06T104952.201.json
+
+###
+
+POST http://localhost:8080/entries
+Content-Type: application/json
+
+{
+  "name": "John M.",
+  "msg":"For the last time, I'm not going on vacation to Vietnam",
+  "img_url": "URL to an image to attach to the post"
+}
+
+<> 2019-04-06T104934.201.json
+
+###
+
+GET http://localhost:8080/entries
+
+<> 2019-04-06T104850.200.json
+
+###
+
+POST http://localhost:8080/entries
+Content-Type: application/json
+
+{
+  "name": "Barry O.",
+  "msg":"Change we can like, believe in, and stuff",
+  "img_url": "URL to an image to attach to the post"
+}
+
+<> 2019-04-06T104725.201.json
+
+###
+
+GET http://localhost:8080/entries
+
+<> 2019-04-06T104627.200.json
+
+###
+
+POST http://localhost:8080/entries
+Content-Type: application/json
+
+{
+  "name": "Author #11",
+  "msg":"Change we can like, believe in, and stuff",
+  "img_url": "URL to an image to attach to the post"
+}
+
+<> 2019-04-06T104621.201.json
+
+###
+
+POST http://localhost:8080/entries
+Content-Type: application/json
+
+{
+  "name": "Author #11",
+  "msg":"Change we can like, believe in, and stuff",
+  "img_url": "URL to an image to attach to the post"
+}
+
+<> 2019-04-06T104427.201.json
+
+###
+
+POST http://localhost:8080/entries
+Content-Type: application/json
+
+{
+  "name": "Author #11",
+  "msg":"Change we can like, believe in, and stuff",
+  "img_url": "URL to an image to attach to the post"
+}
+
+<> 2019-04-06T104337.201.json
+
+###
+

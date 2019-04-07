@@ -1,5 +1,8 @@
 package guestbook;
 
+import guestbook.images.ImageDownloader;
+import guestbook.images.ImageHoster;
+import guestbook.images.ImageTransformer;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;

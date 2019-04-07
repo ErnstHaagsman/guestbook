@@ -1,4 +1,4 @@
-package guestbook;
+package guestbook.images;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
