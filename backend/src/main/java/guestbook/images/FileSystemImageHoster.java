@@ -1,5 +1,6 @@
 package guestbook.images;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import javax.imageio.ImageIO;
@@ -11,6 +12,7 @@ import java.nio.file.Paths;
 import java.util.UUID;
 
 @Component
+@Profile("!gcp")
 public class FileSystemImageHoster implements ImageHoster {
     private final FileSystemHosterSettings settings;
 
