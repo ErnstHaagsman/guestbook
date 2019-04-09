@@ -58,3 +58,38 @@ spec:
                 secretKeyRef:
                   name: dbsettings
                   key: password
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: guestbook-frontend
+  labels:
+    app: guestbook
+    layer: frontend
+spec:
+  replicas: 2
+  minReadySeconds: 15
+  strategy:
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: guestbook
+        layer: frontend
+    spec:
+      containers:
+        - name: guestbook-backend
+          image: us.gcr.io/teamcitytest-166414/guestbook-frontend:pre2
+          ports:
+            - containerPort: 80
+          readinessProbe:
+            periodSeconds: 5
+            httpGet:
+              path: /
+              port: 80
+          env:
+            - name: API_URL
+              value: "http://guestbook.ernsthaagsman.com/entries"
