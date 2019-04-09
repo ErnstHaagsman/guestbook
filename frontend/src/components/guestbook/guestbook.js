@@ -132,16 +132,17 @@ export default class Guestbook extends PureComponent {
       return await fetch(url, {
         method: 'GET',
         headers: defaultHeaders
-      }).then(r => r.ok ? r.json().messages : null)
+      }).then(r => r.ok ? r.json() : null)
     } else {
       return []
     }
   }
 
   componentDidMount() {
-    this.loadMessages().then(loadedMessages => {
-      console.log("loaded:")
-      console.log(loadedMessages)
+    this.loadMessages().then(loadedData => {
+      console.log("loaded data:")
+      console.log(loadedData)
+      const loadedMessages = loadedData.messages
       this.setState(() => ({
         messages: loadedMessages && loadedMessages.length ? loadedMessages.map(m =>
           ({author: m.name, url: m["image_url"], text: m.msg, time: m.datetime})): []
