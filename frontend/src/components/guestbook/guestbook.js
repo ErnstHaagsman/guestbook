@@ -98,7 +98,7 @@ export default class Guestbook extends PureComponent {
         headers: defaultHeaders,
         body: JSON.stringify({
           name: message.author,
-          image_url: message.url,
+          img_url: message.url,
           msg: message.text,
           datetime: message.time,
         }),
@@ -145,7 +145,7 @@ export default class Guestbook extends PureComponent {
       const loadedMessages = loadedData.messages
       this.setState(() => ({
         messages: loadedMessages && loadedMessages.length ? loadedMessages.map(m =>
-          ({author: m.name, url: m["image_url"], text: m.msg, time: m.datetime})): []
+          ({author: m.name, url: m["img_url"], text: m.msg, time: m.datetime})): []
       }))
     })
   }
