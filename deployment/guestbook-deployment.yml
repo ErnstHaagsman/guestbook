@@ -3,7 +3,8 @@ kind: Deployment
 metadata:
   name: guestbook-backend
   labels:
-    app: backend
+    app: guestbook
+    layer: backend
 spec:
   replicas: 3
   minReadySeconds: 15
@@ -15,11 +16,16 @@ spec:
   template:
     metadata:
       labels:
-        app: backend
+        app: guestbook
+        layer: backend
     spec:
+      volumes:
+        - name: google-cloud-key
+          secret:
+            secretName: gcs-key
       containers:
         - name: guestbook-backend
-          image: us.gcr.io/ernsthaagsman-209012/guestbook:latest
+          image: us.gcr.io/teamcitytest-166414/guestbook:pre1
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -27,3 +33,28 @@ spec:
             httpGet:
               path: /entries
               port: 8080
+          volumeMounts:
+            - name: google-cloud-key
+              mountPath: /var/secrets/google
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: gcp,postgres
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: /var/secrets/google/key.json
+            - name: GUESTBOOK_GCP_GCSBUCKET
+              value: jb-gcp-guestbook
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: dbsettings
+                  key: url
+            - name: DATABASE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: dbsettings
+                  key: username
+            - name: DATABASE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: dbsettings
+                  key: password
