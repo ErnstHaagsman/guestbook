@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: guestbook-backend
@@ -13,6 +13,10 @@ spec:
       maxSurge: 2
       maxUnavailable: 1
     type: RollingUpdate
+  selector:
+    matchLabels:
+      app: guestbook
+      layer: backend
   template:
     metadata:
       labels:
@@ -59,7 +63,7 @@ spec:
                   name: dbsettings
                   key: password
 ---
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: guestbook-frontend
@@ -74,6 +78,10 @@ spec:
       maxSurge: 2
       maxUnavailable: 1
     type: RollingUpdate
+  selector:
+    matchLabels:
+      app: guestbook
+      layer: frontend
   template:
     metadata:
       labels:
@@ -82,7 +90,7 @@ spec:
     spec:
       containers:
         - name: guestbook-backend
-          image: us.gcr.io/teamcitytest-166414/guestbook-frontend:pre2
+          image: us.gcr.io/teamcitytest-166414/guestbook-frontend:pre7
           ports:
             - containerPort: 80
           readinessProbe:
