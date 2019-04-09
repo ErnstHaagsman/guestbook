@@ -1,0 +1,55 @@
+{
+  "root": true,
+  "parser": "babel-eslint",
+  "extends": [
+    "@jetbrains",
+    "@jetbrains/eslint-config/node",
+    "@jetbrains/eslint-config/es6",
+    "@jetbrains/eslint-config/react",
+    "prettier",
+    "prettier/react",
+  ],
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "no-unused-expressions": "off",
+    "import/no-commonjs": "off",
+    "linebreak-style": "off",
+    "prettier/prettier": "error",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true,
+        "optionalDependencies": false,
+        "peerDependencies": false
+      }
+    ],
+    "curly": ["error", "all"],
+    "camelcase": ["error", {
+      "properties": "never"
+    }]
+  },
+  "globals": {
+    "cssVariables": true
+  },
+  "overrides": [
+    {
+      "files": [
+        "jest.setup.js",
+        "*.test.js",
+        "test.js",
+      ],
+      "globals": {
+        "React": false,
+        "mount": false,
+        "shallow": false,
+        "render": false,
+      },
+      "env": {
+        "jest": true,
+        "browser": true,
+      }
+    }
+  ]
+}
