@@ -96,12 +96,12 @@ export default class Guestbook extends PureComponent {
       return await fetch(url, {
         method: 'POST',
         headers: defaultHeaders,
-        body: {
+        body: JSON.stringify({
           name: message.author,
           image_url: message.url,
           msg: message.text,
           datetime: message.time,
-        }
+        }),
       }).then(r => r.ok ? r.json() : null)
         .then(r => message)
     } else {
