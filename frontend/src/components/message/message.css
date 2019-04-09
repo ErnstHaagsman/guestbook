@@ -1,0 +1,17 @@
+.message {
+  padding-top: 16px;
+}
+
+.info {
+  font-style: italic;
+  color: gray;
+}
+
+.imageInMessage {
+  padding: 8px 0;
+}
+
+.author {
+  font-weight: bold;
+  color: black;
+}

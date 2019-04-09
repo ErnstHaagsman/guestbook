@@ -1,0 +1,9 @@
+.messageList {
+  margin-top: 32px;
+  border-top: 1px solid lightgray;
+}
+
+.emptyList {
+  margin-top: 16px;
+  color: gray;
+}
