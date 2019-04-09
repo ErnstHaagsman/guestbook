@@ -29,7 +29,7 @@ spec:
             secretName: gcs-key
       containers:
         - name: guestbook-backend
-          image: us.gcr.io/teamcitytest-166414/guestbook:pre1
+          image: us.gcr.io/teamcitytest-166414/guestbook
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -90,7 +90,7 @@ spec:
     spec:
       containers:
         - name: guestbook-backend
-          image: us.gcr.io/teamcitytest-166414/guestbook-frontend:pre7
+          image: us.gcr.io/teamcitytest-166414/guestbook-frontend
           ports:
             - containerPort: 80
           readinessProbe:
