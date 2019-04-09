@@ -1,21 +1,9 @@
-.guestbook {
-  width: 50vw;
-}
-
 .form {
   display: flex;
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
+  margin-bottom: 30px;
 }
 
 .preview {
   color: lightgray;
   margin: 16px;
 }
-
-.message {
-  padding-bottom: 16px;
-}
-

@@ -6,6 +6,10 @@ import './message.css'
 import './../app/app.css'
 import Text from '@jetbrains/ring-ui/components/text/text'
 
+const calculateTime = time =>
+  moment(time)
+    .startOf(time)
+    .fromNow()
 export default class Message extends PureComponent {
   static propTypes = {
     author: PropTypes.string,
@@ -21,17 +25,19 @@ export default class Message extends PureComponent {
 
     return (
       <div className="message">
-        <div className="info">
-          <span className="author">{author}</span>
-          <span>
-            ,{' '}
-            {moment(time)
-              .startOf(time)
-              .fromNow()}
-          </span>
+        {url && (
+          <div className="messageImageContainer">
+            <div className="messageImageFade" />
+            <img src={url} className="messageImage" />
+          </div>
+        )}
+        <div className="description">
+          <div className="info">
+            <span className="author">{`${author}, `}</span>
+            <span>{`${calculateTime(time)}`}</span>
+          </div>
+          <Text className="text">{text}</Text>
         </div>
-        <div>{url && <img src={url} className="imageInMessage" />}</div>
-        <Text>{text}</Text>
       </div>
     )
   }
