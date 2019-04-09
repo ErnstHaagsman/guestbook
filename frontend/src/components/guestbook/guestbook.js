@@ -132,7 +132,7 @@ export default class Guestbook extends PureComponent {
       return await fetch(url, {
         method: 'GET',
         headers: defaultHeaders
-      }).then(r => r.ok ? r.json() : null)
+      }).then(r => r.ok ? r.json().messages : null)
     } else {
       return []
     }
