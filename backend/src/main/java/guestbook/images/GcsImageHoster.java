@@ -51,7 +51,7 @@ public class GcsImageHoster implements ImageHoster {
     }
 
     private String getUrlPrefix(){
-        return "https://storage.cloud.google.com/" + gcsBucket;
+        return "https://storage.googleapis.com/" + gcsBucket;
     }
 
     public void setGcsBucket(String gcsBucket) {
