@@ -25,6 +25,10 @@ npm run create-component
 
 #Production
 
-docker build -t gb .
+1) run `npm run build` 
 
-docker run --name gb -e "API_URL=<endpoint>" -d -p 80:80 gb
+2) copy `dist` folder to the `docker` folder
+
+3) run `docker build -t gb .`
+
+4) run `docker run --name gb -e "API_URL=<endpoint>" -d -p 80:80 gb`
