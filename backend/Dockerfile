@@ -8,4 +8,4 @@ COPY ${JAR_FILE} /app/app.jar
 
 ENV SPRING_PROFILES_ACTIVE=memory
 
-ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+CMD ["java", "-jar", "/app/app.jar"]
