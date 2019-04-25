@@ -14,7 +14,7 @@ Get the Cloud SQL Proxy, connect an SQL editor, and create the database,
 and the role that the application uses. Then run 'schema.sql' on the 
 database, and make sure to:
 
-    GRANT ALL PRIVILGES ON TABLE entries TO [name of your role];
+    GRANT ALL PRIVILEGES ON TABLE entries TO [name of your role];
 
 At this point, fill out the secrets yml file with the base64 encoded
 versions of your database's jdbc URL, role name, and password. 
