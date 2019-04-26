@@ -11,8 +11,8 @@ Then you need to create a service account with cloud storage writer rights
 attached, and download the JSON file.
 
 Get the Cloud SQL Proxy, connect an SQL editor, and create the database,
-and the role that the application uses. Then run 'schema.sql' on the 
-database, and make sure to:
+and the role that the application uses. Then run 'schema.sql' (found in ../database) 
+on the database, and make sure to:
 
     GRANT ALL PRIVILEGES ON TABLE entries TO [name of your role];
 

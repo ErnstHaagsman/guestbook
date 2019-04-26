@@ -26,7 +26,7 @@ services:
       - "8080:8080"
     environment:
       SPRING_PROFILES_ACTIVE: postgres
-      GUESTBOOK_IMAGES_LOCAL_URLPREFIX: http://localhost/images
+      GUESTBOOK_IMAGES_LOCAL_URLPREFIX: /images
       GUESTBOOK_IMAGES_LOCAL_FILEPATH: /images/
       DATABASE_URL: jdbc:postgresql://db:5432/postgres
       DATABASE_USERNAME: postgres
