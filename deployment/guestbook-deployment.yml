@@ -5,6 +5,7 @@ metadata:
   labels:
     app: guestbook
     layer: backend
+    environment: prod
 spec:
   replicas: 3
   minReadySeconds: 15
@@ -17,11 +18,13 @@ spec:
     matchLabels:
       app: guestbook
       layer: backend
+      environment: prod
   template:
     metadata:
       labels:
         app: guestbook
         layer: backend
+        environment: prod
     spec:
       volumes:
         - name: google-cloud-key
@@ -70,6 +73,7 @@ metadata:
   labels:
     app: guestbook
     layer: frontend
+    environment: prod
 spec:
   replicas: 2
   minReadySeconds: 15
@@ -82,11 +86,13 @@ spec:
     matchLabels:
       app: guestbook
       layer: frontend
+      environment: prod
   template:
     metadata:
       labels:
         app: guestbook
         layer: frontend
+        environment: prod
     spec:
       containers:
         - name: guestbook-backend

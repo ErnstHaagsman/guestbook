@@ -8,20 +8,20 @@ metadata:
     app: guestbook
 spec:
   backend:
-    serviceName: guestbook-frontend
+    serviceName: guestbook-frontend-prod
     servicePort: 80
   rules:
     - http:
         paths:
           - path: /entries
             backend:
-              serviceName: guestbook-backend
+              serviceName: guestbook-backend-prod
               servicePort: 8080
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: guestbook-backend
+  name: guestbook-backend-prod
   labels:
     app: guestbook
     layer: backend
@@ -30,6 +30,7 @@ spec:
   selector:
     app: guestbook
     layer: backend
+    environment: prod
   ports:
     - port: 8080
       targetPort: 8080
@@ -37,7 +38,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: guestbook-frontend
+  name: guestbook-frontend-prod
   labels:
     app: guestbook
     layer: frontend
@@ -46,6 +47,7 @@ spec:
   selector:
     app: guestbook
     layer: frontend
+    environment: prod
   ports:
     - port: 80
       targetPort: 80
