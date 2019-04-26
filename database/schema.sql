@@ -4,4 +4,3 @@ CREATE TABLE IF NOT EXISTS entries (
   image_url text not null,
   created_at timestamp with time zone default now()
 );
-GRANT ALL PRIVILEGES ON TABLE entries TO postgres;
