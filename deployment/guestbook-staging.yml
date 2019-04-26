@@ -1,0 +1,88 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: guestbook-backend-staging
+  labels:
+    app: guestbook
+    layer: backend
+    environment: staging
+spec:
+  replicas: 1
+  minReadySeconds: 15
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: guestbook
+      layer: backend
+      environment: staging
+  template:
+    metadata:
+      labels:
+        app: guestbook
+        layer: backend
+        environment: staging
+    spec:
+      volumes:
+        - name: google-cloud-key
+          secret:
+            secretName: gcs-key
+      containers:
+        - name: guestbook-backend
+          image: us.gcr.io/teamcitytest-166414/guestbook-backend
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            periodSeconds: 5
+            httpGet:
+              path: /entries
+              port: 8080
+          volumeMounts:
+            - name: google-cloud-key
+              mountPath: /var/secrets/google
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: gcp,memory
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: /var/secrets/google/key.json
+            - name: GUESTBOOK_GCP_GCSBUCKET
+              value: jb-gcp-guestbook
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: guestbook-frontend-staging
+  labels:
+    app: guestbook
+    layer: frontend
+    environment: staging
+spec:
+  replicas: 1
+  minReadySeconds: 15
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: guestbook
+      layer: frontend
+      environment: staging
+  template:
+    metadata:
+      labels:
+        app: guestbook
+        layer: frontend
+        environment: staging
+    spec:
+      containers:
+        - name: guestbook-backend
+          image: us.gcr.io/teamcitytest-166414/guestbook-frontend
+          ports:
+            - containerPort: 80
+          readinessProbe:
+            periodSeconds: 5
+            httpGet:
+              path: /
+              port: 80
+          env:
+            - name: API_URL
+              value: "http://staging.guestbook.ernsthaagsman.com/entries"
