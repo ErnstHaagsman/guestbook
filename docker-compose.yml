@@ -1,0 +1,44 @@
+version: '3.7'
+
+volumes:
+  images:
+
+services:
+  frontend:
+    build: frontend/docker
+    environment:
+      API_URL: /entries
+    ports:
+      - "80:80"
+    volumes:
+      - images:/usr/share/nginx/html/images
+      - ./conf:/etc/nginx/conf.d
+    links:
+      - backend
+
+  backend:
+    build: 
+      context: backend
+      dockerfile: Dockerfile
+      args:
+        JAR_FILE: build/libs/guestbook-0.1.0.jar
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: postgres
+      GUESTBOOK_IMAGES_LOCAL_URLPREFIX: http://localhost/images
+      GUESTBOOK_IMAGES_LOCAL_FILEPATH: /images/
+      DATABASE_URL: jdbc:postgresql://db:5432/postgres
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: hunter2
+    volumes:
+      - images:/images
+    links:
+      - db
+
+  db:
+    build: database
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: hunter2
