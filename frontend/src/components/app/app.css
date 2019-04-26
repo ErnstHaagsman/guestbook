@@ -3,6 +3,7 @@
 html,
 .app-root {
   height: 100%;
+  width: 100%;
   display: flex;
   display: -webkit-box;
   display: -moz-box;
@@ -23,9 +24,19 @@ html,
 }
 
 .app-content {
-  margin: calc(var(--ring-unit) * 4);
+  margin: calc(var(--ring-unit) * 4) auto 0;
+  width: 50vw;
+  min-width: 320px;
 }
 
 .image {
   width: 200px;
+}
+
+.header {
+  width: 100%;
+}
+
+.root-element {
+  width: 100%;
 }

@@ -1,43 +1,38 @@
-import React from 'react';
-import {render} from 'react-dom';
-import RedBox from 'redbox-react';
+import React from 'react'
+import {render} from 'react-dom'
+import RedBox from 'redbox-react'
 
-import AppRoot from './app-root';
-import './app.css';
+import AppRoot from './app-root'
+import './app.css'
 
-const appEl = document.querySelector('.app-root');
-const rootEl = document.createElement('div');
+const appEl = document.querySelector('.app-root')
+const rootEl = document.createElement('div')
+rootEl.classList.add('root-element')
 
 let renderApp = () => {
-  render(
-    <AppRoot/>,
-    rootEl
-  );
-};
+  render(<AppRoot />, rootEl)
+}
 
 /* Hot Replacement support, won't be bundled to production */
 /* eslint-disable modules/no-exports-typo */
 if (module.hot) {
-  const renderAppHot = renderApp;
+  const renderAppHot = renderApp
   const renderError = error => {
-    render(
-      <RedBox error={error}/>,
-      rootEl
-    );
-  };
+    render(<RedBox error={error} />, rootEl)
+  }
 
   renderApp = () => {
     try {
-      renderAppHot();
+      renderAppHot()
     } catch (error) {
-      renderError(error);
+      renderError(error)
     }
-  };
+  }
 
   module.hot.accept('./app-root', () => {
-    setTimeout(renderApp);
-  });
+    setTimeout(renderApp)
+  })
 }
 
-renderApp();
-appEl.appendChild(rootEl);
+renderApp()
+appEl.appendChild(rootEl)
